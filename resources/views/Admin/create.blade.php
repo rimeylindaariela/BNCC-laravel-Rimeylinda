@@ -22,7 +22,7 @@
         <input type="number" name="stock" id="stock" required><br><br>
 
         <label for="picture">Product Image:</label>
-        <input type="file" name="picture" id="picture" required><br><br>
+        <input type="file" name="picture" id="picture" accept="image/*" required><br><br>
 
         <button type="submit">Create Product</button>
     </form>

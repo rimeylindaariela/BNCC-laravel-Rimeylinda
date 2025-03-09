@@ -25,7 +25,8 @@
                 <tr>
                     <td>{{ $product->id }}</td>
                     <td>{{ $product->name }}</td>
-                    <td>{{ $product->price }}</td>
+                    <td>Rp.{{ $product->price }}</td>
+                    <td><img src="{{ asset('storage/app/private'. $product->picture) }}" alt="Product Image">
                     <td>
                         <a href="{{ route('admin.products.edit', $product->id) }}">Edit</a>
                         <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" style="display:inline;">

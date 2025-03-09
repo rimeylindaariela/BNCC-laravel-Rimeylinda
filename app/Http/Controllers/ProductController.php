@@ -20,7 +20,7 @@ class ProductController extends Controller
         ]);
         // Handle the picture upload
         if ($request->hasFile('picture')) {
-            $path = $request->file('picture')->store('public/products'); // Store the image in the public/products directory
+            $path = $request->file('picture')->store('products', 'public'); // Store the image in the public/products directory
             }
         // Create the product
         $product = Product::create([
@@ -32,5 +32,11 @@ class ProductController extends Controller
         ]);
 
         return redirect()->route('products.index'); // Redirect to the products list page
+    }
+
+    public function index()
+    {
+        $products = Product::all();
+        return view('products.index', compact('products'));
     }
 }
